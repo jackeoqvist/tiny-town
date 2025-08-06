@@ -156,6 +156,7 @@ zoom = Vector2(2, 2)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_kln2b")
+speed = 8000.0
 
 [node name="Graphics" type="Sprite2D" parent="Player"]
 texture = ExtResource("2_idj7w")

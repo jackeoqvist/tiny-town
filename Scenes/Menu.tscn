@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://6hu4e53y6c1w"]
+
+[ext_resource type="Texture2D" uid="uid://bfpdfk20fylln" path="res://Assets/UI/Tiles/Large tiles/Thick outline/tile_0003.png" id="1_3kf3n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6pedr"]
+texture = ExtResource("1_3kf3n")
+texture_margin_left = 5.65091
+texture_margin_top = 5.93534
+texture_margin_right = 6.26514
+texture_margin_bottom = 6.01945
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Menu" type="CanvasLayer"]
+
+[node name="BG" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -163.0
+offset_right = 163.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6pedr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 91.0
+offset_right = -91.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="BG/VBoxContainer"]
+layout_mode = 2
+text = "PLAY"

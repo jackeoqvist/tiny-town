@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c55rk1er04nep"]
+
+[ext_resource type="Script" uid="uid://ccgckr0woj1hp" path="res://Scripts/Player.gd" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://oimxu3lt0g17" path="res://Assets/rougelike-characters/Spritesheet/roguelikeChar_transparent.png" id="2_gntrk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_idj7w"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_kyqiw")
+speed = 8000.0
+
+[node name="Graphics" type="Sprite2D" parent="."]
+texture = ExtResource("2_gntrk")
+region_enabled = true
+region_rect = Rect2(17, 34, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_idj7w")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0

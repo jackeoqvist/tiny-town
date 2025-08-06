@@ -1,16 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://6hu4e53y6c1w"]
+[gd_scene load_steps=9 format=3 uid="uid://6hu4e53y6c1w"]
 
-[ext_resource type="Texture2D" uid="uid://bfpdfk20fylln" path="res://Assets/UI/Tiles/Large tiles/Thick outline/tile_0003.png" id="1_3kf3n"]
+[ext_resource type="Texture2D" uid="uid://bkm11aql351au" path="res://Assets/UI/Tiles/Large tiles/Thick outline/tile_0018.png" id="1_6pedr"]
+[ext_resource type="Script" uid="uid://itqptdyykeyy" path="res://Scripts/Menu.gd" id="1_wfhf6"]
+[ext_resource type="Theme" uid="uid://ctrym2cavtiu" path="res://UI-res/Standard.tres" id="2_syfuq"]
+[ext_resource type="Texture2D" uid="uid://bg6vkw43bwgvw" path="res://Assets/UI/Tiles/Large tiles/Thick outline/tile_0056.png" id="3_ma218"]
+[ext_resource type="Texture2D" uid="uid://b0jexn0wix2oc" path="res://Assets/UI/Tiles/Large tiles/Thick outline/tile_0057.png" id="4_idohh"]
+[ext_resource type="FontFile" uid="uid://qr88siguc0qa" path="res://UI-res/Kenney Pixel.ttf" id="5_idohh"]
+[ext_resource type="Texture2D" uid="uid://btg6d4hwo8uky" path="res://Assets/UI/Tiles/Large tiles/Thick outline/tile_0058.png" id="5_wfhf6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6pedr"]
-texture = ExtResource("1_3kf3n")
-texture_margin_left = 5.65091
-texture_margin_top = 5.93534
-texture_margin_right = 6.26514
-texture_margin_bottom = 6.01945
+texture = ExtResource("1_6pedr")
+texture_margin_left = 10.029
+texture_margin_top = 10.0
+texture_margin_right = 10.0863
+texture_margin_bottom = 10.1436
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_wfhf6")
 
 [node name="BG" type="Panel" parent="."]
 anchors_preset = 8
@@ -18,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -163.0
-offset_top = -163.0
-offset_right = 163.0
-offset_bottom = 163.0
+offset_left = -258.0
+offset_top = -139.0
+offset_right = 258.0
+offset_bottom = 139.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_6pedr")
@@ -31,12 +42,82 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 91.0
-offset_right = -91.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Button" type="Button" parent="BG/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="BG/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_syfuq")
 text = "PLAY"
+
+[node name="SettingsButton" type="Button" parent="BG/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_syfuq")
+text = "Settings
+"
+
+[node name="QuitButton" type="Button" parent="BG/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_syfuq")
+text = "Quit
+"
+
+[node name="Banner" type="Control" parent="BG"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -258.0
+offset_top = -151.0
+offset_right = 258.0
+offset_bottom = -151.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BG/Banner"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = -3.0
+offset_right = 537.78
+offset_bottom = 124.0
+theme_override_constants/separation = 0
+
+[node name="Left" type="TextureRect" parent="BG/Banner/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_ma218")
+
+[node name="Middle" type="TextureRect" parent="BG/Banner/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_idohh")
+
+[node name="BannerLabel" type="Label" parent="BG/Banner/HBoxContainer/Middle"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.5
+offset_top = -36.5
+offset_right = 126.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_idohh")
+theme_override_font_sizes/font_size = 80
+text = "TINY TOWN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="TextureRect" parent="BG/Banner/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_wfhf6")
+
+[connection signal="pressed" from="BG/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="BG/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="BG/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://bcx5aibghcers"]
+[gd_scene load_steps=6 format=4 uid="uid://bcwecl6sv85wb"]
 
 [ext_resource type="Texture2D" uid="uid://cu40htcm518pi" path="res://Assets/tiny-town-kit/Tilemap/tilemap.png" id="1_3sb47"]
 [ext_resource type="PackedScene" uid="uid://c55rk1er04nep" path="res://Scenes/Player.tscn" id="2_tpord"]

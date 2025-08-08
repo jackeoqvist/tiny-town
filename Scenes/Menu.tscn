@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://6hu4e53y6c1w"]
+[gd_scene load_steps=10 format=3 uid="uid://6hu4e53y6c1w"]
 
 [ext_resource type="Texture2D" uid="uid://bkm11aql351au" path="res://Assets/UI/Tiles/Large tiles/Thick outline/tile_0018.png" id="1_6pedr"]
-[ext_resource type="Script" uid="uid://itqptdyykeyy" path="res://Scripts/Menu.gd" id="1_wfhf6"]
+[ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_wfhf6"]
+[ext_resource type="Texture2D" uid="uid://b7jxxg2eivdsg" path="res://Assets/Patterns/Tiles (Color)/tile_0001.png" id="2_3jcrr"]
 [ext_resource type="Theme" uid="uid://ctrym2cavtiu" path="res://UI-res/Standard.tres" id="2_syfuq"]
 [ext_resource type="Texture2D" uid="uid://bg6vkw43bwgvw" path="res://Assets/UI/Tiles/Large tiles/Thick outline/tile_0056.png" id="3_ma218"]
 [ext_resource type="Texture2D" uid="uid://b0jexn0wix2oc" path="res://Assets/UI/Tiles/Large tiles/Thick outline/tile_0057.png" id="4_idohh"]
@@ -23,7 +24,25 @@ region_rect = Rect2(0, 0, 32, 32)
 [node name="Menu" type="CanvasLayer"]
 script = ExtResource("1_wfhf6")
 
-[node name="BG" type="Panel" parent="."]
+[node name="BG" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3jcrr")
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="BG"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -37,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_6pedr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BG"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,24 +66,24 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="BG/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="BG/Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_syfuq")
 text = "PLAY"
 
-[node name="SettingsButton" type="Button" parent="BG/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="BG/Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_syfuq")
 text = "Settings
 "
 
-[node name="QuitButton" type="Button" parent="BG/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="BG/Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_syfuq")
 text = "Quit
 "
 
-[node name="Banner" type="Control" parent="BG"]
+[node name="Banner" type="Control" parent="BG/Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -75,7 +94,7 @@ offset_right = 258.0
 offset_bottom = -151.0
 grow_horizontal = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BG/Banner"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BG/Panel/Banner"]
 layout_mode = 0
 offset_left = -9.0
 offset_top = -3.0
@@ -83,17 +102,17 @@ offset_right = 537.78
 offset_bottom = 124.0
 theme_override_constants/separation = 0
 
-[node name="Left" type="TextureRect" parent="BG/Banner/HBoxContainer"]
+[node name="Left" type="TextureRect" parent="BG/Panel/Banner/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("3_ma218")
 
-[node name="Middle" type="TextureRect" parent="BG/Banner/HBoxContainer"]
+[node name="Middle" type="TextureRect" parent="BG/Panel/Banner/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("4_idohh")
 
-[node name="BannerLabel" type="Label" parent="BG/Banner/HBoxContainer/Middle"]
+[node name="BannerLabel" type="Label" parent="BG/Panel/Banner/HBoxContainer/Middle"]
 z_index = 1
 layout_mode = 1
 anchors_preset = 8
@@ -113,11 +132,13 @@ text = "TINY TOWN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Right" type="TextureRect" parent="BG/Banner/HBoxContainer"]
+[node name="Right" type="TextureRect" parent="BG/Panel/Banner/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("5_wfhf6")
 
-[connection signal="pressed" from="BG/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="BG/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="BG/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="Settings" type="CanvasLayer" parent="."]
+
+[connection signal="pressed" from="BG/Panel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="BG/Panel/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="BG/Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

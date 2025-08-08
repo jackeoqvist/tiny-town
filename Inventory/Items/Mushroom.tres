@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bxel6os1afqjd"]
+
+[ext_resource type="Script" uid="uid://dl1uc7yhd3ad6" path="res://Inventory/ItemData.gd" id="1_3e3r4"]
+[ext_resource type="Texture2D" uid="uid://dw0w0sbbregtg" path="res://Assets/tiny-town-kit/Tiles/tile_0029.png" id="2_lss6r"]
+
+[resource]
+script = ExtResource("1_3e3r4")
+name = "Mushroom"
+texture = ExtResource("2_lss6r")
+is_stackable = true
+max_stack_size = 99

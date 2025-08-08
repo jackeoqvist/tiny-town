@@ -7,5 +7,6 @@
 script = ExtResource("1_3e3r4")
 name = "Mushroom"
 texture = ExtResource("2_lss6r")
+description = "Can I eat this?"
 is_stackable = true
 max_stack_size = 99

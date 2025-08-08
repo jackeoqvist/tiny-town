@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c55rk1er04nep"]
+[gd_scene load_steps=5 format=3 uid="uid://c55rk1er04nep"]
 
 [ext_resource type="Script" uid="uid://ccgckr0woj1hp" path="res://Scripts/Player.gd" id="1_kyqiw"]
-[ext_resource type="Script" uid="uid://dl1uc7yhd3ad6" path="res://Inventory/ItemData.gd" id="2_dewec"]
 [ext_resource type="Texture2D" uid="uid://oimxu3lt0g17" path="res://Assets/rougelike-characters/Spritesheet/roguelikeChar_transparent.png" id="2_gntrk"]
-[ext_resource type="Resource" uid="uid://bxel6os1afqjd" path="res://Inventory/Items/Mushroom.tres" id="3_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://dw0w0sbbregtg" path="res://Assets/tiny-town-kit/Tiles/tile_0029.png" id="5_5ixxa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idj7w"]
@@ -12,7 +10,6 @@ radius = 8.0
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kyqiw")
 speed = 8000.0
-Inventory = Array[ExtResource("2_dewec")]([ExtResource("3_5ixxa"), null, null, ExtResource("3_5ixxa"), null, null, null, null, null, null, null, null])
 
 [node name="Graphics" type="Sprite2D" parent="."]
 texture = ExtResource("2_gntrk")

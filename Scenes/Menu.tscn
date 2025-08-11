@@ -32,6 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="BG"]
+modulate = Color(0.806047, 0.642629, 0.3742, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,6 +139,7 @@ size_flags_horizontal = 3
 texture = ExtResource("5_wfhf6")
 
 [node name="Settings" type="CanvasLayer" parent="."]
+visible = false
 
 [connection signal="pressed" from="BG/Panel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BG/Panel/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

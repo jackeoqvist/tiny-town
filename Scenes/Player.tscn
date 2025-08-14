@@ -1,15 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://c55rk1er04nep"]
+[gd_scene load_steps=7 format=3 uid="uid://c55rk1er04nep"]
 
 [ext_resource type="Script" uid="uid://ccgckr0woj1hp" path="res://Scripts/Player.gd" id="1_kyqiw"]
+[ext_resource type="Script" uid="uid://c5a1m13t60y50" path="res://Inventory/InventorySlot.gd" id="2_dewec"]
 [ext_resource type="Texture2D" uid="uid://oimxu3lt0g17" path="res://Assets/rougelike-characters/Spritesheet/roguelikeChar_transparent.png" id="2_gntrk"]
-[ext_resource type="Texture2D" uid="uid://dw0w0sbbregtg" path="res://Assets/tiny-town-kit/Tiles/tile_0029.png" id="5_5ixxa"]
+[ext_resource type="Resource" uid="uid://b0xpi3qwc3fen" path="res://Inventory/Slot.tres" id="3_5ixxa"]
+[ext_resource type="PackedScene" uid="uid://d2jp77kbe8cuk" path="res://Scenes/slot.tscn" id="5_5ixxa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idj7w"]
 radius = 8.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kyqiw")
+slot = ExtResource("5_5ixxa")
 speed = 8000.0
+Inventory = Array[ExtResource("2_dewec")]([ExtResource("3_5ixxa"), null, null, null, ExtResource("3_5ixxa"), null, null, null, null, null, null, null])
 
 [node name="Graphics" type="Sprite2D" parent="."]
 texture = ExtResource("2_gntrk")
@@ -51,123 +55,3 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 4
-
-[node name="Slot1" type="ColorRect" parent="InventoryUI/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-color = Color(0.194349, 0.194349, 0.194349, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="InventoryUI/ColorRect/GridContainer/Slot1"]
-position = Vector2(5, 5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5ixxa")
-
-[node name="Slot2" type="ColorRect" parent="InventoryUI/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-color = Color(0.194349, 0.194349, 0.194349, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="InventoryUI/ColorRect/GridContainer/Slot2"]
-position = Vector2(5, 5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5ixxa")
-
-[node name="Slot3" type="ColorRect" parent="InventoryUI/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-color = Color(0.194349, 0.194349, 0.194349, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="InventoryUI/ColorRect/GridContainer/Slot3"]
-position = Vector2(5, 5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5ixxa")
-
-[node name="Slot4" type="ColorRect" parent="InventoryUI/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-color = Color(0.194349, 0.194349, 0.194349, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="InventoryUI/ColorRect/GridContainer/Slot4"]
-position = Vector2(5, 5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5ixxa")
-
-[node name="Slot5" type="ColorRect" parent="InventoryUI/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-color = Color(0.194349, 0.194349, 0.194349, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="InventoryUI/ColorRect/GridContainer/Slot5"]
-position = Vector2(5, 5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5ixxa")
-
-[node name="Slot6" type="ColorRect" parent="InventoryUI/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-color = Color(0.194349, 0.194349, 0.194349, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="InventoryUI/ColorRect/GridContainer/Slot6"]
-position = Vector2(5, 5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5ixxa")
-
-[node name="Slot7" type="ColorRect" parent="InventoryUI/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-color = Color(0.194349, 0.194349, 0.194349, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="InventoryUI/ColorRect/GridContainer/Slot7"]
-position = Vector2(5, 5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5ixxa")
-
-[node name="Slot8" type="ColorRect" parent="InventoryUI/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-color = Color(0.194349, 0.194349, 0.194349, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="InventoryUI/ColorRect/GridContainer/Slot8"]
-position = Vector2(5, 5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5ixxa")
-
-[node name="Slot9" type="ColorRect" parent="InventoryUI/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-color = Color(0.194349, 0.194349, 0.194349, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="InventoryUI/ColorRect/GridContainer/Slot9"]
-position = Vector2(5, 5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5ixxa")
-
-[node name="Slot10" type="ColorRect" parent="InventoryUI/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-color = Color(0.194349, 0.194349, 0.194349, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="InventoryUI/ColorRect/GridContainer/Slot10"]
-position = Vector2(5, 5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5ixxa")
-
-[node name="Slot11" type="ColorRect" parent="InventoryUI/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-color = Color(0.194349, 0.194349, 0.194349, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="InventoryUI/ColorRect/GridContainer/Slot11"]
-position = Vector2(5, 5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5ixxa")
-
-[node name="Slot12" type="ColorRect" parent="InventoryUI/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-color = Color(0.194349, 0.194349, 0.194349, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="InventoryUI/ColorRect/GridContainer/Slot12"]
-position = Vector2(5, 5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5ixxa")

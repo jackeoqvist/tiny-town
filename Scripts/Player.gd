@@ -2,19 +2,26 @@ extends CharacterBody2D
 
 signal Inventory_updated(newInv)
 
+@export var slot : PackedScene
+
 @export var speed : float = 300
 
-var Inventory: Array[InventorySlot] = []
-@export var Inventory_size: int = 12
+#@export var Inventory_size: int
+@export var Inventory: Array[InventorySlot]
+
 
 func _ready() -> void:
-	Inventory.resize(Inventory_size)
-	Inventory.fill(null)
-	print("Inventory initialized with empty slots: ", Inventory)
+	#Inventory.resize(Inventory_size)
+	#Inventory.fill(null)
+	print(Inventory)
+	for invSlot in Inventory:
+		var s = slot.instantiate()
+		
+		$InventoryUI/ColorRect/GridContainer.add_child(s)
 
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_key_pressed(KEY_E):
+	if Input.is_action_just_pressed("inventory"):
 		$InventoryUI.visible = not $InventoryUI.visible
 	
 	var direction = Input.get_vector("left", "right", "up", "down")

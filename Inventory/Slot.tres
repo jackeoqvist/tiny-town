@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventorySlot" load_steps=3 format=3 uid="uid://b0xpi3qwc3fen"]
+
+[ext_resource type="Resource" uid="uid://bxel6os1afqjd" path="res://Inventory/Items/Mushroom.tres" id="1_4f1vw"]
+[ext_resource type="Script" uid="uid://c5a1m13t60y50" path="res://Inventory/InventorySlot.gd" id="2_o1kpn"]
+
+[resource]
+script = ExtResource("2_o1kpn")
+item_data = ExtResource("1_4f1vw")
+quantity = 1

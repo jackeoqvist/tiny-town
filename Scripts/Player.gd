@@ -11,6 +11,7 @@ signal Inventory_updated(newInv)
 
 
 func _ready() -> void:
+	
 	#Inventory.resize(Inventory_size)
 	#Inventory.fill(null)
 	print(Inventory)
